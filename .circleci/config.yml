@@ -7,7 +7,7 @@ orbs:
 # Orchestrate or schedule a set of jobs
 jobs:
   create_infrastructure:
-    docker: "amazon/aws-cli"
+    - docker: "amazon/aws-cli"
   steps:
     - checkout
     - run:
@@ -16,10 +16,5 @@ jobs:
         aws cloudformtion create-stack --stack-name circleci_infra --template-body file://template.yml
 workflows:
   createinfrastructure:
-  jobs:
-    - create_infrastructure
-  # Name the workflow "welcome"
-  welcome:
-    # Run the welcome/run job in its own container
     jobs:
-      - welcome/run
+      - create_infrastructure
