@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Ensure backend infrastructure exist
           command: |
-            aws cloudformation create-stack --stack-name circleci-create --template-body file://template.yml
+            aws cloudformation create-stack --stack-name circleci-create --template-body file://../template.yml
               
 workflows:
   my_workflow:
