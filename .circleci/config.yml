@@ -12,8 +12,7 @@ jobs:
     - checkout
     - run:
       name: "Creating a CloudFormation infrastructure"
-      command: 
-        aws cloudformtion create-stack --stack-name circleci_infra --template-body file://template.yml
+      command: aws cloudformtion create-stack --stack-name circleci_infra --template-body file://template.yml
 workflows:
   createinfrastructure:
     jobs:
